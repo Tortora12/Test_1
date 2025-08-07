@@ -1,0 +1,12 @@
+bs4
+httpx
+lxml
+pytz
+tqdm
+pandas
+openpyxl
+dotenv
+fake-useragent
+python-dotenv
+telethon
+python-telegram-bot
