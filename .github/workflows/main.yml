@@ -35,8 +35,13 @@ jobs:
           SESSION_64: ${{ secrets.SESSION_64 }}
 
       - name: Run
-        run: |
-          python scarica_1.py
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          CHAT_ID: ${{ secrets.CHAT_ID }}
+          API_ID: ${{ secrets.API_ID }}
+          API_HASH: ${{ secrets.API_HASH }}
+          PHONE: ${{ secrets.PHONE }}
+        run: python scarica_1.py
 
       - name: Configure Git
         run: |
