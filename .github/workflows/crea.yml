@@ -28,6 +28,12 @@ jobs:
           echo "nameserver 9.9.9.9" | sudo tee /etc/resolv.conf
           echo "nameserver 1.1.1.1" | sudo tee -a /etc/resolv.conf
 
+      - name: Restore session
+        run: |
+          echo "$SESSION_64" | base64 -d > session_name.session
+        env:
+          SESSION_64: ${{ secrets.SESSION_64 }}
+
       - name: Run
         env:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
