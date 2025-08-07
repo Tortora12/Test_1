@@ -30,7 +30,7 @@ jobs:
 
       - name: Restore session file from compressed secret
         run: |
-          echo "$SESSION_64" | base64 -d > session_name.zip
+          echo "$SESSION_ZIP64" | base64 -d > session_name.zip
           unzip session_name.zip
         env:
           SESSION_ZIP64: ${{ secrets.SESSION_ZIP64 }}
