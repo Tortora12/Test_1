@@ -5,9 +5,14 @@ on:
     - cron: '0 17 * * *'
   workflow_dispatch:
 
+concurrency:
+  group: scarica-job
+  cancel-in-progress: false
+
 jobs:
   runsScrapper:
     runs-on: ubuntu-latest
+    timeout-minutes: 360
     
     steps:
       - name: Checkout code
