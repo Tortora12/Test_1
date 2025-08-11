@@ -11,3 +11,4 @@ python-dotenv
 telethon
 python-telegram-bot
 curl-cffi
+unidecode
